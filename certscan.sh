@@ -2,7 +2,8 @@
 #!/bin/bash
 
 # list all the unexpired certs...
-# requiores a list of git repos in repolist.txt
+# requires a list of git repos in repolist
+# ... and repolist has to have an empty line at the end
 
 outputFile='output.csv'
 echo '' > $outputFile
@@ -51,12 +52,13 @@ while IFS= read -r line; do
 			else
 				echo 'cool'
 			fi
-		
 		done
-		
 	fi
 done < repolist.txt
 
 
 
-
+# output!
+# trim out some of the common intermediate chains...
+# you can always look at the actual output.csv if you wanna see the raw list
+cat "$outputFile" | grep -v 'intermediate_chain' | grep -v 'dc1_' | grep -v 'bundle'
