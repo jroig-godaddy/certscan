@@ -3,7 +3,7 @@ run it like this:
 ```
 ./scanner.sh https://github.secureserver.net/PC/paylinks-api
 ```
-... that'll run tartufo / gitleaks / trufflehog, then follow up with a local cert scan.
+.. that'll clone the repo, run tartufo / gitleaks / trufflehog, then follow up with a local cert scan... and clean up at the end.
 
 
 # CertScan
